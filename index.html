@@ -64,6 +64,10 @@
         // 지도를 생성합니다    
         var map = new kakao.maps.Map(mapContainer, mapOption); 
 
+        // 출발지와 도착지 객체 생성
+        var start = new kakao.map.LatLng(35.13367784973298, 129.1049204111099);
+        var end = new kakao.map.LatLng(35.132568, 129.091948);
+
         // 장소 검색 객체를 생성합니다
         var ps = new kakao.maps.services.Places();  
         
@@ -73,9 +77,6 @@
         // 키워드로 장소를 검색합니다
         searchPlaces();
 
-        // 출발지와 도착지 객체 생성
-        var start = new kakao.map.LatLng(0,0);
-        var end = new kakao.map.LatLng(0,0);
 
         // 출발지를 버튼으로 입력받습니다.
         function coordtostr() {
@@ -92,16 +93,10 @@
         };
 
         function letpede() {
-            var str = document.getElementById('str');
-            var startX = str.getLng();
-            var startY = str.getLat();
-                start = new kakao.maps.LatLng(startY, startX)
-            var dst = document.getElementById('dst');
-            var endX = dst.getLng();
-            var endY = dst.getLat();
-                end = new kakao.maps.LatLng(endY, endX);
-                map = map;
-                pedestrian_route(start, end, map);
+            start = new kakao.maps.LatLng(str.innerText)
+            end = new kakao.maps.LatLng(dst.innerText);
+            map = map;
+            pedestrian_route(start, end, map);
         }
     </script>
 </body>

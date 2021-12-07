@@ -22,7 +22,7 @@
         <div id="menu_wrap" class="bg_white">
             <div class="option">
                 <div>
-                    <form onsubmit="searchPlaces(); return false;">
+                    <form onsubmit="searchPlaces() &&  letpede(); return false;">
                         키워드 : <input type="text" value="부경대학교" id="keyword" size="15"> 
                         <button type="submit">검색하기</button> 
                     </form>
@@ -31,7 +31,7 @@
                     좌표 :
                 </div>
             </div>
-            <button type='button' onclick='letpede(); return false'>길찾기</button>
+            <button type='button'>길찾기</button>
             <hr>
             <ul id="placesList"></ul>
             <div id="pagination"></div>
@@ -93,9 +93,14 @@
 
         function letpede() {
             var str = document.getElementById('str');
-                start = new kakao.map.LatLng(str);
+            var startX = str.getLng();
+            var startY = str.getLat();
+                start = new kakao.maps.LatLng(startY, startX)
             var dst = document.getElementById('dst');
-                end = new kakao.map.LatLng(dst);
+            var endX = dst.getLng();
+            var endY = dst.getLat();
+                end = new kakao.maps.LatLng(endY, endX);
+                map = map;
                 pedestrian_route(start, end, map);
         }
     </script>

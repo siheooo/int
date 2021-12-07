@@ -31,7 +31,7 @@
                     좌표 :
                 </div>
             </div>
-            <button type='button' onclick='pedestrian_route(start, end, map); return false'>길찾기</button>
+            <button type='button' onclick='letpede(); return false'>길찾기</button>
             <hr>
             <ul id="placesList"></ul>
             <div id="pagination"></div>
@@ -79,17 +79,25 @@
 
         // 출발지를 버튼으로 입력받습니다.
         function coordtostr() {
-        start = document.getElementById('coordinate')
-        var str = document.getElementById('str')
-            str.innerText = start.innerText
+            start = document.getElementById('coordinate')
+            var str = document.getElementById('str')
+                str.innerText = start.innerText
         };
 
         // 도착지를 버튼으로 입력받습니다.
         function coordtodst() {
-        end = document.getElementById('coordinate')
-        var dst = document.getElementById('dst')
-            dst.innerText = end.innerText
+            end = document.getElementById('coordinate')
+            var dst = document.getElementById('dst')
+                dst.innerText = end.innerText
         };
+
+        function letpede() {
+            var str = document.getElementById('str');
+                start = new kakao.map.LatLng(str);
+            var dst = document.getElementById('dst');
+                end = new kakao.map.LatLng(dst);
+                pedestrian_route(start, end, map);
+        }
     </script>
 </body>
 

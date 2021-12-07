@@ -31,6 +31,7 @@
                     좌표 :
                 </div>
             </div>
+            <button type='button' onclick=pedestrian_route(start, end, map)>길찾기</button>
             <hr>
             <ul id="placesList"></ul>
             <div id="pagination"></div>
@@ -89,10 +90,6 @@
         var dst = document.getElementById('dst')
             dst.innerText = end.innerText
         };
-        
-        // 길찾기 실행
-        pedestrian_route(start, end, map);
-
     </script>
 </body>
 

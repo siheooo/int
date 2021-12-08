@@ -65,8 +65,9 @@ function displayPlaces(places) {
 
         // 페이지에서 좌표를 표시할 Element를 가져옵니다.
         var coordinate = document.getElementById("coordinate");
-        var coordX = document.getElementById("coordX");
-        var coordY = document.getElementById("coordY");
+        var coordinateX = document.getElementById("coordinateX");
+        var coordinateY = document.getElementById("coordinateY");
+
 
 
         // 검색결과 항목에 mouseover 했을때
@@ -75,17 +76,17 @@ function displayPlaces(places) {
         (function(marker, title) {
             itemEl.onmouseover =  function () {
                 displayInfowindow(marker, title);
-                coord = marker.getPosition();
-                coordinate.innerText = coord
-                coordX.innerText = coord.getX();
-                coordY.innerText = coord.getY();
+                var coord = marker.getPosition();
+                var coordX = coord.getLng();
+                var coordY = coord.getLat();
+                coordinate.innerText = coord;
+                coordinateX.innerText = coordX;
+                coordinateY.innerText = coordY;
             };
 
             itemEl.onmouseout =  function () {
                 infowindow.close();
                 coordinate.innerText = '좌표 값'
-                coordX.innerText = 'X 좌표'
-                coordY.innerText = 'Y 좌표'
             };
         })(marker, places[i].place_name);
 

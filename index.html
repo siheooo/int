@@ -32,12 +32,13 @@
                 <div id="coordinate">
                     좌표 값
                 </div>
-                <div id="coordX">
-                    X 좌표
+                <div id="coordinateX">
+                    X좌표 값
                 </div>
-                <div id="coordY">
-                    Y 좌표
+                <div id="coordinateY">
+                    Y좌표 값
                 </div>
+
             </div>
             <button type='button' onclick='letpede(); return false;'>길찾기</button>
             <hr>
@@ -48,24 +49,28 @@
     
     <div class="str">
         <b>출발지</b>
-        <div id="str x" style="width: 75px;">
-            x좌표
+        <div id="str">
+            좌표
         </div>
-        <div id="str y" style="width: 75px;">
-            y좌표
+        <div id="strX">
+            X 좌표
+        </div>
+        <div id="strY">
+            Y 좌표
         </div>
     </div>
-
     <div class="dst">
         <b>도착지</b>
-        <div id="dst x" style="width: 75px;">
-            x좌표
+        <div id="dst">
+            좌표
         </div>
-        <div id="dst y" style="width: 75px;">
-            y좌표
+        <div id="dstX">
+            X 좌표
+        </div>
+        <div id="dstY">
+            Y 좌표
         </div>
     </div>
-
     <div>
         <p>-</p>
         <p id="default_route" style="font-size: 15px;">기존 경로 시간, 거리 안내</p>
@@ -101,22 +106,34 @@
 
         // 출발지를 버튼으로 입력받습니다.
         function coordtostr() {
-            var strX = document.getElementById('str X')
-                strX.innerText = document.getElementById('coordX')
-            var strY = document.getElementById('str Y')
-                strY.innerText = document.getElementById('coordY')
-            start = new kakao.maps.LatLng(strY,strX)
+            start = document.getElementById('coordinate')
+            var startX = document.getElementById('coordinateX')
+            var startY = document.getElementById('coordinateY')
+            var str = document.getElementById('str')
+                str.innerText = start.innerText
+            var strX = document.getElementById('strX')
+                strX.innerText = startX.innerText
+            var strY = document.getElementById('strY')
+                strY.innerText = startY.innerText
             console.log(start)
+            console.log(startX)
+            console.log(startY)
         };
 
         // 도착지를 버튼으로 입력받습니다.
         function coordtodst() {
-            var dstX = document.getElementById('dst X')
-                dstX.innerText = document.getElementById('coordX')
-            var dstY = document.getElementById('dst Y')
-                dstY.innerText = document.getElementById('coordY')
-            end = new kakao.maps.LatLng(dstY,dstX)
+            end = document.getElementById('coordinate')
+            endX = document.getElementById('coordinateX')
+            endY = document.getElementById('coordinateY')
+            var dst = document.getElementById('dst')
+                dst.innerText = end.innerText
+            var dstX = document.getElementById('dstX')
+                dstX.innerText = endX.innerText
+            var dstY = document.getElementById('dstY')
+                dstY.innerText = endY.innerText
             console.log(end)
+            console.log(endX)
+            console.log(endY)
         };
 
         // 길 찾기
@@ -132,11 +149,7 @@
 
 
         function letpede() {
-            var startX = document.getElementById("str X").value;
-            var startY = document.getElementById("str Y").value;
-            var endX = document.getElementById("dst X").value;
-            var endY = document.getElementById("dst Y").value;
-            start = new kakao.maps.LatLng(startY, startX);
+            start = new kakao.maps.LatLng(startY, startX)
             end = new kakao.maps.LatLng(endY, endX);
             map = map;
             console.log(start)

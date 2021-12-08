@@ -90,6 +90,7 @@
             start = document.getElementById('coordinate')
             var str = document.getElementById('str')
                 str.innerText = start.innerText
+            console.log(start)
         };
 
         // 도착지를 버튼으로 입력받습니다.
@@ -97,6 +98,7 @@
             end = document.getElementById('coordinate')
             var dst = document.getElementById('dst')
                 dst.innerText = end.innerText
+            console.log(end)
         };
 
         // 길 찾기
@@ -112,14 +114,11 @@
 
 
         function letpede() {
-            start = new kakao.maps.LatLng(str.innerText)
-            end = new kakao.maps.LatLng(dst.innerText);
+            start = new kakao.maps.LatLng(start)
+            end = new kakao.maps.LatLng(end);
             map = map;
 
             pedestrian_route(start, end, map);
-
-            console.log(start)
-            console.log(end)
         };
     </script>
 </body>

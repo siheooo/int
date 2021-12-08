@@ -82,9 +82,6 @@ function displayPlaces(places) {
                 coordinate.innerText = coord;
                 coordinateX.innerText = coordX;
                 coordinateY.innerText = coordY;
-                console.log(coord);
-                console.log(coordX);
-                console.log(coordY);
             };
 
             itemEl.onmouseout =  function () {

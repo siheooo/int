@@ -32,12 +32,6 @@
                 <div id="coordinate">
                     좌표 값
                 </div>
-                <div id="coordX">
-                    X 좌표
-                </div>
-                <div id="coordY">
-                    Y 좌표
-                </div>
             </div>
             <button type='button' onclick='letpede(); return false;'>길찾기</button>
             <hr>
@@ -48,24 +42,16 @@
     
     <div class="str">
         <b>출발지</b>
-        <div id="str x" style="width: 75px;">
-            x좌표
-        </div>
-        <div id="str y" style="width: 75px;">
-            y좌표
+        <div id="str">
+            좌표
         </div>
     </div>
-
     <div class="dst">
         <b>도착지</b>
-        <div id="dst x" style="width: 75px;">
-            x좌표
-        </div>
-        <div id="dst y" style="width: 75px;">
-            y좌표
+        <div id="dst">
+            좌표
         </div>
     </div>
-
     <div>
         <p>-</p>
         <p id="default_route" style="font-size: 15px;">기존 경로 시간, 거리 안내</p>
@@ -101,21 +87,17 @@
 
         // 출발지를 버튼으로 입력받습니다.
         function coordtostr() {
-            var strX = document.getElementById('str X')
-                strX.innerText = document.getElementById('coordX')
-            var strY = document.getElementById('str Y')
-                strY.innerText = document.getElementById('coordY')
-            start = new kakao.maps.LatLng(strY,strX)
+            start = document.getElementById('coordinate')
+            var str = document.getElementById('str')
+                str.innerText = start.innerText
             console.log(start)
         };
 
         // 도착지를 버튼으로 입력받습니다.
         function coordtodst() {
-            var dstX = document.getElementById('dst X')
-                dstX.innerText = document.getElementById('coordX')
-            var dstY = document.getElementById('dst Y')
-                dstY.innerText = document.getElementById('coordY')
-            end = new kakao.maps.LatLng(dstY,dstX)
+            end = document.getElementById('coordinate')
+            var dst = document.getElementById('dst')
+                dst.innerText = end.innerText
             console.log(end)
         };
 
@@ -132,12 +114,8 @@
 
 
         function letpede() {
-            var startX = document.getElementById("str X").value;
-            var startY = document.getElementById("str Y").value;
-            var endX = document.getElementById("dst X").value;
-            var endY = document.getElementById("dst Y").value;
-            start = new kakao.maps.LatLng(startY, startX);
-            end = new kakao.maps.LatLng(endY, endX);
+            start = new kakao.maps.LatLng(start)
+            end = new kakao.maps.LatLng(end);
             map = map;
             console.log(start)
             console.log(end)

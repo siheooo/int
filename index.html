@@ -24,7 +24,7 @@
         <div id="menu_wrap" class="bg_white">
             <div class="option">
                 <div>
-                    <form onsubmit="searchPlaces() &&  letpede(); return false;">
+                    <form onsubmit="searchPlaces(); return false;">
                         키워드 : <input type="text" value="부경대학교" id="keyword" size="15"> 
                         <button type="submit">검색하기</button> 
                     </form>
@@ -33,7 +33,7 @@
                     좌표 :
                 </div>
             </div>
-            <button type='button'>길찾기</button>
+            <button type='button' onclick='letpede(); return false;'>길찾기</button>
             <hr>
             <ul id="placesList"></ul>
             <div id="pagination"></div>
@@ -110,19 +110,16 @@
 		var distance_pass = 0; // 경유시 거리
 		var distance_diff = 0; // 원래 거리에서 경유시 거리의 차이
 
-        console.log(start)
-        console.log(end)
-        console.log(map)
-
 
         function letpede() {
             start = new kakao.maps.LatLng(str.innerText)
             end = new kakao.maps.LatLng(dst.innerText);
             map = map;
+
             pedestrian_route(start, end, map);
+
             console.log(start)
-        console.log(end)
-        console.log(map)
+            console.log(end)
         };
     </script>
 </body>

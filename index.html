@@ -119,9 +119,6 @@
                 strX.innerText = startX.innerText
             var strY = document.getElementById('strY')
                 strY.innerText = startY.innerText
-            console.log(start)
-            console.log(startX)
-            console.log(startY)
         };
 
         // 도착지를 버튼으로 입력받습니다.
@@ -130,14 +127,11 @@
             endX = document.getElementById('coordinateX')
             endY = document.getElementById('coordinateY')
             var dst = document.getElementById('dst')
-                dst.innerHTML = end.innerHTML
+                dst.innerText = end.innerText
             var dstX = document.getElementById('dstX')
-                dstX.innerHTML = endX.innerHTML
+                dstX.innerText = endX.innerText
             var dstY = document.getElementById('dstY')
-                dstY.innerHTML = endY.innerHTML
-            console.log(end)
-            console.log(endX)
-            console.log(endY)
+                dstY.innerText = endY.innerText
         };
 
         // 길 찾기
@@ -153,11 +147,11 @@
 
 
         function letpede() {
-            start = new kakao.maps.LatLng(startY, startX)
-            end = new kakao.maps.LatLng(endY, endX);
+            start = new kakao.maps.LatLng(startY.innerText, startX.innerText)
+            end = new kakao.maps.LatLng(endY.innerText, endX.innerText);
             map = map;
-            console.log(start)
-            console.log(end)
+            console.log(start.innerText)
+            console.log(end.innerText)
             pedestrian_route(start, end, map);
         };
     </script>

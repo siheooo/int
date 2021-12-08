@@ -128,9 +128,9 @@
             var dst = document.getElementById('dst')
                 dst.innerText = end.innerText
             var dstX = document.getElementById('dstX')
-                dstX.innerText = end.innerText
+                dstX.innerText = endX.innerText
             var dstY = document.getElementById('dstY')
-                dstY.innerText = end.innerText
+                dstY.innerText = endY.innerText
             console.log(end)
             console.log(endX)
             console.log(endY)
@@ -149,8 +149,8 @@
 
 
         function letpede() {
-            start = new kakao.maps.LatLng(start)
-            end = new kakao.maps.LatLng(end);
+            start = new kakao.maps.LatLng(startY, startX)
+            end = new kakao.maps.LatLng(endY, endX);
             map = map;
             console.log(start)
             console.log(end)

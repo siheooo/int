@@ -65,6 +65,9 @@ function displayPlaces(places) {
 
         // 페이지에서 좌표를 표시할 Element를 가져옵니다.
         var coordinate = document.getElementById("coordinate");
+        var coordinateX = document.getElementById("coordinateX");
+        var coordinateY = document.getElementById("coordinateY");
+
 
 
         // 검색결과 항목에 mouseover 했을때
@@ -76,7 +79,9 @@ function displayPlaces(places) {
                 var coord = marker.getPosition();
                 var coordX = coord.getLng();
                 var coordY = coord.getLat();
-                coordinate.innerText = marker.getPosition();
+                coordinate.innerText = coord;
+                coordinateX.innerText = coordX;
+                coordinateY.innerText = coordY;
                 console.log(coord);
                 console.log(coordX);
                 console.log(coordY);

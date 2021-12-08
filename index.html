@@ -5,7 +5,7 @@
 
 
 <head>
-    <title>TEST v1.1</title>
+    <title>TEST v1.3</title>
     <script src = './pathsearch.js'></script>
     <script src = './pedestrian_route.js'></script>
     <link rel ="stylesheet" href ='./style.css' type='text/css'>
@@ -92,7 +92,11 @@
 
         // 출발지와 도착지 객체 생성
         var start = new kakao.maps.LatLng(35.13367784973298, 129.1049204111099);
+        var startX = 0;
+        var startY = 0; 
         var end = new kakao.maps.LatLng(35.132568, 129.091948);
+        var endX = 0;
+        var endY = 0;
 
         // 장소 검색 객체를 생성합니다
         var ps = new kakao.maps.services.Places();  
@@ -106,15 +110,15 @@
 
         // 출발지를 버튼으로 입력받습니다.
         function coordtostr() {
-            start = document.getElementById('coordinate')
-            var startX = document.getElementById('coordinateX')
-            var startY = document.getElementById('coordinateY')
+            start = document.getElementById('coordinate').value
+            startX = document.getElementById('coordinateX').value
+            startY = document.getElementById('coordinateY').value
             var str = document.getElementById('str')
-                str.innerText = start.innerText
+                str.innerText = start
             var strX = document.getElementById('strX')
-                strX.innerText = startX.innerText
+                strX.innerText = startX
             var strY = document.getElementById('strY')
-                strY.innerText = startY.innerText
+                strY.innerText = startY
             console.log(start)
             console.log(startX)
             console.log(startY)
@@ -122,15 +126,15 @@
 
         // 도착지를 버튼으로 입력받습니다.
         function coordtodst() {
-            end = document.getElementById('coordinate')
-            endX = document.getElementById('coordinateX')
-            endY = document.getElementById('coordinateY')
+            end = document.getElementById('coordinate').value
+            endX = document.getElementById('coordinateX').value
+            endY = document.getElementById('coordinateY').value
             var dst = document.getElementById('dst')
-                dst.innerText = end.innerText
+                dst.innerText = end
             var dstX = document.getElementById('dstX')
-                dstX.innerText = endX.innerText
+                dstX.innerText = endX
             var dstY = document.getElementById('dstY')
-                dstY.innerText = endY.innerText
+                dstY.innerText = endY
             console.log(end)
             console.log(endX)
             console.log(endY)

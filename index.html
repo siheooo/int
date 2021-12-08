@@ -5,7 +5,7 @@
 
 
 <head>
-    <title>TEST v 1.8</title>
+    <title>TEST</title>
     <script src = './pathsearch.js'></script>
     <script src = './pedestrian_route.js'></script>
     <link rel ="stylesheet" href ='./style.css' type='text/css'>
@@ -91,12 +91,12 @@
         var map = new kakao.maps.Map(mapContainer, mapOption); 
 
         // 출발지와 도착지 객체 생성
-        var start = document.getElementById('str')
-        var startX = document.getElementById('strX')
-        var startY = document.getElementById('strY')
-        var end = document.getElementById('dst')
-        var endX = document.getElementById('dstX')
-        var endY = document.getElementById('dstY')
+        var start = new kakao.maps.LatLng(35.13367784973298, 129.1049204111099);
+        var startX = 0;
+        var startY = 0; 
+        var end = new kakao.maps.LatLng(35.132568, 129.091948);
+        var endX = 0;
+        var endY = 0;
 
         // 장소 검색 객체를 생성합니다
         var ps = new kakao.maps.services.Places();  
@@ -110,22 +110,34 @@
 
         // 출발지를 버튼으로 입력받습니다.
         function coordtostr() {
+            start = document.getElementById('coordinate')
+            startX = document.getElementById('coordinateX')
+            startY = document.getElementById('coordinateY')
             var str = document.getElementById('str')
                 str.innerText = start.innerText
             var strX = document.getElementById('strX')
                 strX.innerText = startX.innerText
             var strY = document.getElementById('strY')
                 strY.innerText = startY.innerText
+            console.log(start)
+            console.log(startX)
+            console.log(startY)
         };
 
         // 도착지를 버튼으로 입력받습니다.
         function coordtodst() {
+            end = document.getElementById('coordinate')
+            endX = document.getElementById('coordinateX')
+            endY = document.getElementById('coordinateY')
             var dst = document.getElementById('dst')
                 dst.innerText = end.innerText
             var dstX = document.getElementById('dstX')
                 dstX.innerText = endX.innerText
             var dstY = document.getElementById('dstY')
                 dstY.innerText = endY.innerText
+            console.log(end)
+            console.log(endX)
+            console.log(endY)
         };
 
         // 길 찾기
@@ -142,15 +154,7 @@
 
         function letpede() {
             start = new kakao.maps.LatLng(startY.innerText, startX.innerText)
-            console.log(startX.innerText)
-            console.log(startX)
-            console.log(startY.innerText)
-            console.log(startY)
             end = new kakao.maps.LatLng(endY.innerText, endX.innerText);
-            console.log(endX.innerText)
-            console.log(endX)
-            console.log(endY.innerText)
-            console.log(endY)
             map = map;
             console.log(start)
             console.log(end)

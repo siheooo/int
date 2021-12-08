@@ -75,9 +75,10 @@ function displayPlaces(places) {
         (function(marker, title) {
             itemEl.onmouseover =  function () {
                 displayInfowindow(marker, title);
-                coordinate.innerText = marker.getPosition();
-                coordX.innerText = marker.getX();
-                coordY.innerText = marker.getY();
+                coord = marker.getPosition();
+                coordinate.innerText = coord
+                coordX.innerText = coord.getX();
+                coordY.innerText = coord.getY();
             };
 
             itemEl.onmouseout =  function () {

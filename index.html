@@ -5,7 +5,7 @@
 
 
 <head>
-    <title>TEST v1.7</title>
+    <title>TEST</title>
     <script src = './pathsearch.js'></script>
     <script src = './pedestrian_route.js'></script>
     <link rel ="stylesheet" href ='./style.css' type='text/css'>
@@ -91,12 +91,12 @@
         var map = new kakao.maps.Map(mapContainer, mapOption); 
 
         // 출발지와 도착지 객체 생성
-        var start = document.getElementById('coordinate')
-        var startX = document.getElementById('coordinateX')
-        var startY = document.getElementById('coordinateY')
-        var end = document.getElementById('coordinate')
-        var endX = document.getElementById('coordinateX')
-        var endY = document.getElementById('coordinateY')
+        var start = document.getElementById('str')
+        var startX = document.getElementById('strX')
+        var startY = document.getElementById('strY')
+        var end = document.getElementById('dst')
+        var endX = document.getElementById('dstX')
+        var endY = document.getElementById('dstY')
 
         // 장소 검색 객체를 생성합니다
         var ps = new kakao.maps.services.Places();  

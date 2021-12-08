@@ -5,7 +5,7 @@
 
 
 <head>
-    <title>TEST v1.1</title>
+    <title>TEST v1.2</title>
     <script src = './pathsearch.js'></script>
     <script src = './pedestrian_route.js'></script>
     <link rel ="stylesheet" href ='./style.css' type='text/css'>
@@ -117,7 +117,8 @@
             start = new kakao.maps.LatLng(start)
             end = new kakao.maps.LatLng(end);
             map = map;
-
+            console.log(start)
+            console.log(end)
             pedestrian_route(start, end, map);
         };
     </script>

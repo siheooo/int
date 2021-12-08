@@ -5,7 +5,7 @@
 
 
 <head>
-    <title>TEST v1.3</title>
+    <title>TEST v1.4</title>
     <script src = './pathsearch.js'></script>
     <script src = './pedestrian_route.js'></script>
     <link rel ="stylesheet" href ='./style.css' type='text/css'>
@@ -110,9 +110,9 @@
 
         // 출발지를 버튼으로 입력받습니다.
         function coordtostr() {
-            start = document.getElementById('coordinate').value
-            startX = document.getElementById('coordinateX').value
-            startY = document.getElementById('coordinateY').value
+            start = document.getElementById('coordinate')
+            startX = document.getElementById('coordinateX')
+            startY = document.getElementById('coordinateY')
             var str = document.getElementById('str')
                 str.innerText = start
             var strX = document.getElementById('strX')
@@ -126,15 +126,15 @@
 
         // 도착지를 버튼으로 입력받습니다.
         function coordtodst() {
-            end = document.getElementById('coordinate').value
-            endX = document.getElementById('coordinateX').value
-            endY = document.getElementById('coordinateY').value
+            end = document.getElementById('coordinate')
+            endX = document.getElementById('coordinateX')
+            endY = document.getElementById('coordinateY')
             var dst = document.getElementById('dst')
-                dst.innerText = end
+                dst.innerHTML = end
             var dstX = document.getElementById('dstX')
-                dstX.innerText = endX
+                dstX.innerHTML = endX
             var dstY = document.getElementById('dstY')
-                dstY.innerText = endY
+                dstY.innerHTML = endY
             console.log(end)
             console.log(endX)
             console.log(endY)

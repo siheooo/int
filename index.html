@@ -5,7 +5,7 @@
 
 
 <head>
-    <title>TEST v1.1</title>
+    <title>TEST</title>
     <script src = './pathsearch.js'></script>
     <script src = './pedestrian_route.js'></script>
     <link rel ="stylesheet" href ='./style.css' type='text/css'>
@@ -92,7 +92,11 @@
 
         // 출발지와 도착지 객체 생성
         var start = new kakao.maps.LatLng(35.13367784973298, 129.1049204111099);
+        var startX = 0;
+        var startY = 0; 
         var end = new kakao.maps.LatLng(35.132568, 129.091948);
+        var endX = 0;
+        var endY = 0;
 
         // 장소 검색 객체를 생성합니다
         var ps = new kakao.maps.services.Places();  
@@ -107,8 +111,8 @@
         // 출발지를 버튼으로 입력받습니다.
         function coordtostr() {
             start = document.getElementById('coordinate')
-            var startX = document.getElementById('coordinateX')
-            var startY = document.getElementById('coordinateY')
+            startX = document.getElementById('coordinateX')
+            startY = document.getElementById('coordinateY')
             var str = document.getElementById('str')
                 str.innerText = start.innerText
             var strX = document.getElementById('strX')
